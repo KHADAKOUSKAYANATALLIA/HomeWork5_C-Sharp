@@ -7,7 +7,6 @@
 void FullArray(int[] array) 
 {
     int count = 0;
-
     Random random = new Random();
 
     for(int i = 0; i < array.Length; i++)
@@ -31,6 +30,8 @@ Console.Write("Введите размер массива: ");
 int N = Convert.ToInt32(Console.ReadLine());
 int [] array = new int[N];
 FullArray(array);
-Console.WriteLine("Ваш массив: "); // String.Join();
+
+Console.WriteLine("Ваш массив: "); 
 PrintArray(array);
+Console.WriteLine(String.Join(", ", array));
 
