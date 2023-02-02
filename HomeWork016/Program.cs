@@ -3,10 +3,9 @@
 [3 7 22 2 78] -> 76
 */
 
-void FullArray(int [] array) 
+void CreateArray(int [] array) 
 {
-    int result = 0;
-    Random random = new Random();
+     Random random = new Random();
 
     for(int i = 0; i < array.Length; i++)
     {
@@ -21,7 +20,7 @@ void FullArray(int [] array)
         if(array[i] > maxElement)
         {
         maxElement = array[i];
-        Console.WriteLine(maxElement);
+        Console.WriteLine(($"Максимальный элемент массива = {maxElement}"));
         }
     }
 
@@ -30,30 +29,26 @@ void FullArray(int [] array)
         if(array[i] < minElement)
         {
         minElement = array[i];
-        Console.WriteLine(minElement);
+        Console.WriteLine($"Минимальный элемент массива = {minElement}");
         }
     }
 
-    result = maxElement - minElement; 
-              
-}    
-// Console.WriteLine($"Разница между максимальным и минимальным элементом массива = {result}");  
+    int result = maxElement - minElement; 
 
-   
+    Console.WriteLine($"Разница между максимальным и минимальным элементом массива = {result}");       
+}    
+ 
 void PrintArray(int [] array) 
 {
-    for(int i = 0; i < array.Length; i++)
     {
-        Console.WriteLine(array[i]);
+        Console.Write("Ваш массив: ");
+        Console.WriteLine(String.Join(", ", array));
     }
 }
 
 Console.Write("Введите размер массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
 int [] array = new int[n];
-FullArray(array);
-
-Console.WriteLine("Ваш массив: ");
+CreateArray(array);
 PrintArray(array);
 
-Console.WriteLine(String.Join(", ", array));
