@@ -5,7 +5,7 @@
 */
 
 
-void FullArray(int[] array) 
+void CreateArray(int[] array) 
 {
     int sum = 0;
     Random random = new Random();
@@ -25,17 +25,14 @@ void FullArray(int[] array)
 
 void PrintArray(int[] array) 
 {
-    for(int i = 0; i < array.Length; i++)
     {
-        Console.WriteLine(array[i]);
+        Console.Write("Ваш массив: ");
+        Console.WriteLine(String.Join(", ", array));
     }
 }
 
 Console.Write("Введите размер массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
 int [] array = new int[n];
-FullArray(array);
-
-Console.WriteLine("Ваш массив: ");
+CreateArray(array);
 PrintArray(array);
-Console.WriteLine(String.Join(", ", array));
